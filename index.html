@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head>
+
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+     <link rel='stylesheet' id='cf-christmasification-css' href='./santa/cf-christmasification-public.css'
+          type='text/css' media='all' />
+
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+     <script type='text/javascript' src='./santa/cf-christmasification-public.js'></script>
+
+
+</head>
+
+<body class="home blog group-blog"
+     style="background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); height: 100vh; display: flex; justify-content: center; align-items: center; flex-flow: column;">
+
+     <h1 class="happy" id="font"
+          style="max-width: 45%; font-size: 12.5vh; text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight: 900;  color: lightblue;">
+          Happy New 2020 Year!</h1>
+
+
+
+
+
+     <!-- Christmasify -->
+     <script>
+          window.addEventListener("load", function () {
+               jQuery(document).ready(function ($) {
+                    $(document).christmasify({
+                         snowflakes: true,
+                         santa: true,
+                         music: "./santa/alexander-nakarada-we-wish-you-a-merry-christmas.mp3",
+                         // music: false,
+                         image_frame: true,
+                         font: true
+                    });
+               });
+          });
+     </script>
+
+     <audio loop id="santa">
+          <source src="./santa/alexander-nakarada-we-wish-you-a-merry-christmas.mp3" type="audio/mpeg">
+          <source src="./santa/alexander-nakarada-we-wish-you-a-merry-christmas.ogg" type="audio/ogg">
+     </audio>
+     <button id="btn"
+          style="padding: 1em; background-color: transparent; border-radius: 0.5em; border: 3px solid lightblue; color: white; font-weight: 700; font-family: Arial, Helvetica, sans-serif;">
+          Music ON
+     </button>
+
+     <script>
+          var btn = document.getElementById("btn");
+          var player = document.getElementById("santa");
+          var mute = true;
+
+
+          btn.addEventListener("click", () => {
+               console.log(player)
+               if (mute) {
+                    player.play();
+                    btn.textContent = "Music OFF";
+                    mute = false;
+               } else {
+                    player.pause();
+                    btn.textContent = "Music On";
+                    mute = true;
+
+               }
+          })
+          console.log("played");
+
+     </script>
+
+
+
+</body>
+
+</html>
